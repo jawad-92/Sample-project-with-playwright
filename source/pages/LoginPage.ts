@@ -7,6 +7,9 @@ export class LoginPage {
   //   readonly welcome: Locator;
   readonly usernameLabel: Locator;
   readonly passwordLabel: Locator;
+  readonly usernameFeild: Locator;
+  readonly passwordFeild: Locator;
+  readonly signinbutton: Locator;
   //   readonly email: Locator;
   readonly password: Locator;
   readonly loginbutton: Locator;
@@ -21,6 +24,9 @@ export class LoginPage {
     this.Loginheading = page.getByRole("heading", { name: "Login" });
     this.usernameLabel = page.getByText("Username", { exact: true });
     this.passwordLabel = page.getByText("Password", { exact: true });
+    this.usernameFeild = page.getByLabel("Email Address or Username");
+    this.passwordFeild = page.getByLabel("Password");
+    this.signinbutton = page.getByRole("button", { name: "Sign in" });
     this.Username = page.getByPlaceholder("username");
     this.password = page.getByPlaceholder("password");
     this.loginbutton = page.getByRole("button", { name: "Login" });
@@ -40,9 +46,9 @@ export class LoginPage {
   }
   // Method to set the email input field
   // Method to set the email input field
-  async setEmail(emailValue: string) {
-    if (emailValue) {
-      await this.email.fill(emailValue);
+  async setusername(usernameValue: string) {
+    if (usernameValue) {
+      await this.Username.fill(usernameValue);
     }
   }
 
